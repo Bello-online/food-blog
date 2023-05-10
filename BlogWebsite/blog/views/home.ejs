@@ -1,0 +1,17 @@
+    <%- include("partials/header.ejs") -%>  <!--Header Partials Template-->
+    <body>
+        <h1> Home </h1>
+       <p> <%= HomeContent %> </p> 
+        
+       <!-- For loop looping through the Posts array and returning the Title of each item-->
+       <% postings.forEach(function(item){ %>  
+        <h1> <%= item.Title %></h1>
+           <p> <%= item.Content.substring(0,100) + "..."  %>  
+            <a href="/posts/<%= item.title%>">Read More</a>
+        </p>
+           
+    <%   }); %>
+        
+
+    </body>
+    <%- include("partials/footer.ejs") -%>  <!-- Footer Partial Template -->
